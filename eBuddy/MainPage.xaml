@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:local="clr-namespace:eBuddy"
+             x:Class="eBuddy.MainPage"
+             Title="{x:Static local:AppResources.ServiceBookTitle}">
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource ThemeBackground}" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem IconImageSource="menu_icon.png"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="OnMoreOptionsClicked"/>
+    </ContentPage.ToolbarItems>
+
+    <Grid>
+
+        <!-- Define the grid rows -->
+        <Grid.RowDefinitions>
+            <!-- Header -->
+            <RowDefinition Height="Auto"/>
+            <!-- Scrollable list -->
+            <RowDefinition Height="*"/>
+            <!-- Button -->
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header: Vehicle selection" -->
+        <Picker x:Name="VehiclePicker"
+                SelectedIndexChanged="OnVehicleSelected"
+                Margin="15,0,15,0"/>
+
+        <!-- Scrollview containing a list of services done to the vehicle -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout
+                x:Name="ServiceList"
+                Padding="20,10,20,10"
+                Spacing="15">
+            </VerticalStackLayout>
+        </ScrollView>
+
+
+        <!-- Add service button fixed at the bottom of the view -->
+        <Button
+            Text="{x:Static local:AppResources.AddServiceButton}"
+            BackgroundColor="{StaticResource ThemeAccent}"
+            Clicked="OnAddServiceClicked"
+            HorizontalOptions="Fill"
+            VerticalOptions="End"
+            Margin="30, 0, 30, 30"
+            Grid.Row="2"/>
+    </Grid>
+
+</ContentPage>

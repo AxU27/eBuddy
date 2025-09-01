@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:eBuddy"
+             x:Class="eBuddy.NewServicePage"
+             Title="{x:Static local:AppResources.AddServicePageTitle}">
+    <ScrollView>
+        <VerticalStackLayout Padding="15,15,15,300" Spacing="15">
+            <Label Text="{x:Static local:AppResources.ServiceTitleLabel}"/>
+            <Entry x:Name="TitleEntry" Placeholder="{x:Static local:AppResources.ServiceTitleEntryPlaceholder}" />
+            
+            <Label Text="{x:Static local:AppResources.ServiceDateLabel}"/>
+            <DatePicker x:Name="DatePicker" Date="{x:Static sys:DateTime.Now}" />
+            
+            <Picker x:Name="ServiceTypePicker" Title="{x:Static local:AppResources.SelectServiceTypeLabel}"/>
+            
+            <Label Text="{x:Static local:AppResources.ServiceMileageLabel}"/>
+            <Entry x:Name="MileageEntry" Placeholder="{x:Static local:AppResources.ServiceMileageEntryPlaceholder}" Keyboard="Numeric" />
+            
+            <Label Text="{x:Static local:AppResources.ServiceDescriptionLabel}"/>
+            <Entry x:Name="DesctriptionEntry" Placeholder="{x:Static local:AppResources.ServiceDescriptionEntryPlaceholder}"/>
+            
+            <Label Text="{x:Static local:AppResources.ServiceCostLabel}"/>
+            <Entry x:Name="CostEntry" Placeholder="{x:Static local:AppResources.ServiceCostEntryPlaceholder}" Keyboard="Numeric" />
+            
+            <Label Text="{x:Static local:AppResources.ServicedByLabel}"/>
+            <Entry x:Name="ServicedByEntry" Placeholder="{x:Static local:AppResources.ServicedByEntryPlaceholder}"/>
+            
+            <Label Text="{x:Static local:AppResources.FilesAttachedLabel}"/>
+            <ListView x:Name="filesListView" HasUnevenRows="True" ItemSelected="OnFileSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding FileName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Button Text="{x:Static local:AppResources.AddFilesButton}" Clicked="OnPickFileClicked"/>
+            <Button Text="{x:Static local:AppResources.SaveServiceButton}" Clicked="OnSaveClicked" BackgroundColor="{StaticResource ThemeAccent}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

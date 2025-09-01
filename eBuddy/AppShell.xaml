@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="eBuddy.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:eBuddy"
+    Title="eBuddy"
+    FlyoutBehavior="Flyout">
+
+    <!-- Service book page -->
+    <FlyoutItem Title="{x:Static local:AppResources.ServiceBookTitle}" Icon="book_icon.png">
+        <ShellContent
+            Title="{x:Static local:AppResources.ServiceBookTitle}"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+
+    <!-- Range calculator page -->
+    <!--
+    <FlyoutItem Title="Range Calculator" Icon="calculator_icon.png">
+        <ShellContent
+            Title="Range Calculator"
+            ContentTemplate="{DataTemplate local:RangeCalculatorPage}"
+            Route="RangeCalculatorPage" />
+    </FlyoutItem>
+    -->
+
+</Shell>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eBuddy.RangeCalculatorPage"
+             Title="Range Calculator">
+    <VerticalStackLayout Padding="15" Spacing="15">
+        <Label 
+            Text="Battery size"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="18"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="kwhLabel"
+                   Text="75 kWh"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Grid.Column="0"/>
+
+            <VerticalStackLayout>
+                <Stepper x:Name="kwhStepperSmall"
+                         Maximum="150"
+                         Minimum="5"
+                         Increment="0.5"
+                         HorizontalOptions="Center"
+                         Grid.Column="1"
+                         ValueChanged="KwhStepSmall"/>
+                
+                <Stepper x:Name="kwhStepperBig"
+                         Maximum="150"
+                         Minimum="5"
+                         Increment="0.5"
+                         HorizontalOptions="Center"
+                         Grid.Column="1"
+                         ValueChanged="KwhStepBig"/>
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
