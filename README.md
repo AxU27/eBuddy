@@ -4,7 +4,13 @@ eBuddy is a drivers companion app with a separate service book for each vehicle 
 so the user won't have to keep their physical receipts safe or have e-receipts scattered around their email, phone and computer.
 The project uses .NET Maui and SQLite.
 
-## Currently planned features
+## Current features
+### Service book
+The idea of this service book is so you will have all the service information in one place and your receipts
+will be stored as photos or pdf files on your device and linked to the relevant service.
+
+## Planned features
+I will be adding the following features when I have time as I'm working on my studies and other projects.
 ### Range calculator
 A range calculator for EVs which uses information like the vehicles battery capacity, SOH, SOC and power consumption to calculate
 the remaining range of the vehicle. Useful for some EVs with inaccurate range calculations, like older Kia Soul EVs
