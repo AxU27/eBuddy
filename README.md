@@ -2,7 +2,10 @@
 ## About
 eBuddy is a drivers companion app with a separate service book for each vehicle with the ability to attach image and pdf files
 so the user won't have to keep their physical receipts safe or have e-receipts scattered around their email, phone and computer.
-The project uses .NET Maui and SQLite.
+The project uses .NET Maui and SQLite. All contributions to this project are made by me. I have used Copilot for help in this project.
+
+## How to run the application
+Currently you need to download the repo and build the solution yourself in Visual Studio for your preferred target platform.
 
 ## Current features
 ### Service book
